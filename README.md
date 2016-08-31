@@ -36,4 +36,6 @@ $ rnpm link
 $ react-native run-ios
 ```
 
+* Use cmd + R to refresh quickly. I'll add hot reload at some point
+
 Full docs at https://github.com/start-react/native-starter-kit
