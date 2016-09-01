@@ -14,6 +14,8 @@ import { Grid, Col, Row } from 'react-native-easy-grid';
 import myTheme from '../../themes/base-theme';
 import styles from './styles';
 
+import ImagePicker from 'react-native-image-crop-picker';
+
 class Home extends Component {
 
     replaceRoute(route) {
@@ -22,6 +24,16 @@ class Home extends Component {
 
     navigateTo(route) {
         this.props.replaceOrPushRoute(route);
+    }
+
+    pickPics() {
+      ImagePicker.openCamera({
+        width: 300,
+        height: 400,
+        cropping: true
+      }).then(image => {
+        console.log(image);
+      });
     }
 
     render() {
@@ -89,7 +101,7 @@ class Home extends Component {
                         <Icon name='ios-pizza' />
                     </Text>
 
-                    <Button transparent onPress={() => this.navigateTo('asker')}>
+                    <Button transparent onPress={() => this.pickPics()}>
                         ASK
                     </Button>
 
