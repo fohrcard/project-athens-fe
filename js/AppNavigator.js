@@ -13,6 +13,7 @@ import Navigator from 'Navigator';
 import Login from './components/login/';
 import Home from './components/home/';
 import BlankPage from './components/blankPage/';
+import Asker from './components/asker/';
 import SplashPage from './components/splashscreen/';
 import SideBar from './components/sideBar';
 import { statusBarColor } from "./themes/base-theme";
@@ -60,7 +61,7 @@ const reducerCreate = params=>{
 const drawerStyle  = { shadowColor: '#000000', shadowOpacity: 0.8, shadowRadius: 3};
 
 class AppNavigator extends Component {
-    
+
     constructor(props){
         super(props);
     }
@@ -142,6 +143,8 @@ class AppNavigator extends Component {
                 return <Home navigator={navigator} />;
             case 'blankPage':
                 return <BlankPage navigator={navigator} />;
+            case 'asker':
+                return <Asker navigator={navigator} />;
             default :
                 return <Login navigator={navigator}  />;
         }

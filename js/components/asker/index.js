@@ -11,7 +11,7 @@ import { Container, Header, Title, Content, Text, Button, Icon } from 'native-ba
 
 import myTheme from '../../themes/base-theme';
 
-class BlankPage extends Component {
+class Asker extends Component {
 
     popRoute() {
         this.props.popRoute();
@@ -30,16 +30,7 @@ class BlankPage extends Component {
 
                 <Content padder>
                     <Text>
-                        Pic 1 v Pic 2
-                    </Text>
-                    <Text>
-                        20% 80%
-                    </Text>
-                    <Text>
-                        220 voters
-                    </Text>
-                    <Text>
-                        20:04 left
+                        Select 2 pics
                     </Text>
                 </Content>
             </Container>
@@ -54,4 +45,4 @@ function bindAction(dispatch) {
     }
 }
 
-export default connect(null, bindAction)(BlankPage);
+export default connect(null, bindAction)(Asker);

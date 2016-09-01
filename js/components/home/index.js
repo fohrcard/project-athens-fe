@@ -6,8 +6,9 @@ import { connect } from 'react-redux';
 
 import { openDrawer } from '../../actions/drawer';
 import { replaceRoute } from '../../actions/route';
+import { replaceOrPushRoute } from '../../actions/route';
 
-import { Container, Header, Title, Content, View, Text, Button, Icon } from 'native-base';
+import { Container, Header, Title, Content, View, Text, Button, Icon, Footer } from 'native-base';
 import { Grid, Col, Row } from 'react-native-easy-grid';
 
 import myTheme from '../../themes/base-theme';
@@ -19,6 +20,10 @@ class Home extends Component {
         this.props.replaceRoute(route);
     }
 
+    navigateTo(route) {
+        this.props.replaceOrPushRoute(route);
+    }
+
     render() {
         return (
             <Container theme={myTheme}style={{backgroundColor: '#565051'}}>
@@ -26,60 +31,72 @@ class Home extends Component {
                     <Button transparent onPress={() => this.replaceRoute('login')}>
                         <Icon name='ios-power' />
                     </Button>
-                    
-                    <Title>Home</Title>
-                    
-                    <Button transparent onPress={this.props.openDrawer}>
-                        <Icon name='ios-menu' />
-                    </Button>
+
+                    <Title>Which is Better?</Title>
+
                 </Header>
-                
+
                 <Content>
                     <Grid style={{marginTop: 20}}>
                         <Row>
                             <View style={styles.row}>
                                 <Text style={styles.text}>
-                                    React Native starter kit
+                                    Picture One
                                 </Text>
                             </View>
                         </Row>
                         <Row>
                             <View style={styles.row}>
                                 <Text style={styles.text}>
-                                    with RN Navigator
+                                    Swipe Left
                                 </Text>
                             </View>
                         </Row>
                         <Row>
                             <View style={styles.row}>
                                 <Text style={styles.text}>
-                                    NB Easy Grid
+                                    Picture Two
                                 </Text>
                             </View>
                         </Row>
                         <Row>
                             <View style={styles.row}>
                                 <Text style={styles.text}>
-                                    NativeBase
+                                    Swipe Right
                                 </Text>
                             </View>
                         </Row>
                         <Row>
                             <View style={styles.row}>
                                 <Text style={styles.text}>
-                                    CodePush
+                                    Flag As Inappropriate
                                 </Text>
                             </View>
                         </Row>
                         <Row>
                             <View style={styles.row}>
                                 <Text style={styles.text}>
-                                    Redux
+                                    UserName and Country
                                 </Text>
                             </View>
                         </Row>
                     </Grid>
                 </Content>
+
+                <Footer style={styles.footer}>
+                    <Text>
+                        +26
+                        <Icon name='ios-pizza' />
+                    </Text>
+
+                    <Button transparent onPress={() => this.navigateTo('asker')}>
+                        ASK
+                    </Button>
+
+                    <Button transparent onPress={() => this.navigateTo('blankPage')}>
+                        <Icon name='ios-albums' />
+                    </Button>
+                </Footer>
             </Container>
         )
     }
@@ -88,7 +105,8 @@ class Home extends Component {
 function bindAction(dispatch) {
     return {
         openDrawer: ()=>dispatch(openDrawer()),
-        replaceRoute:(route)=>dispatch(replaceRoute(route))
+        replaceRoute:(route)=>dispatch(replaceRoute(route)),
+        replaceOrPushRoute:(route)=>dispatch(replaceOrPushRoute(route))
     }
 }
 
