@@ -1,6 +1,7 @@
 package com.nativestarterkit;
 
 import com.facebook.react.ReactActivity;
+import com.reactnative.ivpusic.imagepicker.PickerPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.microsoft.codepush.react.CodePush;
 import com.facebook.react.ReactPackage;
@@ -43,6 +44,7 @@ public class MainActivity extends ReactActivity {
     protected List<ReactPackage> getPackages() {
         return Arrays.<ReactPackage>asList(
             new MainReactPackage(),
+            new PickerPackage(),
             new VectorIconsPackage(),
             new CodePush(null, this, BuildConfig.DEBUG)
         );
