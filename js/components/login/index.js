@@ -26,6 +26,12 @@ class Login extends Component {
         this.props.replaceRoute(route);
     }
 
+    updateUserInfo(info) {
+      fetch().then(function(){
+        this.replaceRoute('home')        
+      })
+    }
+
     render() {
         return (
             <Container theme={myTheme}>
@@ -52,7 +58,7 @@ class Login extends Component {
                                     <Input
                                         placeholder='COUNTRY' />
                                 </InputGroup>
-                                <Button style={styles.btn} textStyle={{color: '#fff'}} onPress={() => this.replaceRoute('home')}>
+                                <Button style={styles.btn} textStyle={{color: '#fff'}} onPress={() => this.updateUserInfo(data)}>
                                     Go
                                 </Button>
                             </View>

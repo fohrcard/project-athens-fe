@@ -33,10 +33,13 @@ module.exports = StyleSheet.create({
         bottom: 0
     },
     input: {
-        marginBottom: 20
+        marginBottom: 20,
+        marginRight: 30,
+        marginLeft: 30
     },
     btn: {
         marginTop: 20,
-        alignSelf: 'center'
+        alignSelf: 'center',
+        width: 280
     }
 });

@@ -33,11 +33,11 @@
    */
 
   
-#ifdef DEBUG
-    jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.ios.bundle?platform=ios&dev=true"];
-#else
-    jsCodeLocation = [CodePush bundleURL];
-#endif
+  #ifdef DEBUG
+      jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.ios.bundle?platform=ios&dev=true"];
+  #else
+      jsCodeLocation = [CodePush bundleURL];
+  #endif
 
   /**
    * OPTION 2
